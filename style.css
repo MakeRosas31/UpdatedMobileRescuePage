@@ -2,11 +2,10 @@
 style.css */
 
 /* Resetting margins and padding for all elements */
-*,
-*::before,
-*::after {
+body, nav, main, footer {
    margin: 0;
    padding: 0;
+   border: 0;
 }
 
 header {
@@ -35,11 +34,11 @@ img{
 
 /*Style rules to show mobile class and hide tab-desk class*/
 .mobile {
-    display: block;
+    display: none;
 }
 
 .tab-desk {
-    display: none;
+    display: block;
 }
 
 
@@ -70,11 +69,6 @@ nav {
     padding: 10px;
     text-align: center;
 }
- 
-nav ul {
-    list-style-type: none;
-    text-align: center;
-}
 
 nav li {
     display: block;
@@ -87,10 +81,7 @@ nav li {
 nav a {
     display: block;
     color: #f6eee4;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 0.5em 1em;
     text-decoration: none;
     text-align: center;
 }
@@ -143,10 +134,7 @@ main ul {
     background-color: #2a1f14;
     padding: 2%;
     width: 80%;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .round {
@@ -199,16 +187,13 @@ main ul {
     text-align: center;
 }
 
-/*About Us Page*/
+/*About Page*/
 div#info {
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding: 2%;
 }
 
 ul#animals {
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 2%;
+    padding: 1% 2%;
     list-style-type: square;
 }
 
@@ -220,8 +205,7 @@ footer {
     color: #f6eee4;
     font-size: 0.85em;
     text-align: center;
-    padding-top: 1%;
-    padding-left: 0%;
+    padding: 1% 0%;
 }
 
 footer a {
@@ -232,9 +216,13 @@ footer a {
 /*Media Query for Tablet Viewport*/
 @media (min-width: 620px) {
     /*Tablet viewport: Show tab-desk class, hide mobile class */
-    /*Style rule for the tab-desk class selector that sets the display to a block*/
     /*Tablet viewport: style rules for nav area*/
-    /*Style rule for the mobile class selector that set the display to none*/
+    
+    nav ul {
+        list-style-type: none;
+        text-align: center;
+    }
+
     nav li {
         display: inline-block;
         font-size: 1.25em;
@@ -252,23 +240,21 @@ footer a {
 
 /*Media Query for Desktop Viewport*/
 @media (min-width: 1000px) {
-    /*Desktop viewport: Style rules for main content*/
+    /*Desktop viewport: Style rules for nav area*/
     nav li {
-        display: inline-block;
         font-size: 1.5em;
-        padding-top: 0.5em;
-        padding-left: 1.5em;
+    }
+
+    nav li a {
+        padding: 0.5em 1.5em;
     }
 
     nav li a:hover {
         color: #2a1f14;
         background-color: #f6eee4;
     }
-    
-    main {
-        padding: 10%;
-    }
-    
+
+    /*Desktop viewport: Style rules for main content*/
     #info ul {
         margin-left: 5%;
     }
@@ -277,7 +263,7 @@ footer a {
 /*Media Query for Large Desktop Viewport*/
 @media (min-width: 1921px) {
     body {
-        background: linear-gradient(to bottom, #f6eee4, #78593a);
+        background: linear-gradient(#f6eee4, #78593a);
     }
 
     nav li {
